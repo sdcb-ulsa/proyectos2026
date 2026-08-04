@@ -1,0 +1,2855 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+		<title>Monopoly!</title>
+	</head>
+	<body>
+		
+		<div id="inicio">
+			<div id="dialog">
+				<p>Número de jugadores</p>
+				<form action="" name="players">
+					2 <input name="jugadores" checked="checked" type="radio" class="player_num" id="2p" onclick="addPlayer(2)">
+					3 <input name="jugadores" type="radio" class="player_num" id="3p" onclick="addPlayer(3)">
+					4 <input name="jugadores" type="radio" class="player_num" id="4p" onclick="addPlayer(4)">
+					5 <input name="jugadores" type="radio" class="player_num" id="5p" onclick="addPlayer(5)">
+					6 <input name="jugadores" type="radio" class="player_num" id="6p" onclick="addPlayer(6)">
+					7 <input name="jugadores" type="radio" class="player_num" id="7p" onclick="addPlayer(7)">
+					8 <input name="jugadores" type="radio" class="player_num" id="8p" onclick="addPlayer(8)">
+				</form>
+				<hr>
+				<div id="player1" class="player">
+					Jugador 1
+					<select name="pieces" id="peon1">
+						<option value="buque" selected="selected">Buque de guerra</option>
+						<option value="carretilla">Carretilla</option>
+						<option value="carrito">Carro</option>
+						<option value="dedal">Dedal</option>
+						<option value="perro">Perro</option>
+						<option value="plancha">Plancha</option>
+						<option value="sombrero">Sombrero</option>
+						<option value="zapato">Zapato</option>
+					</select>
+				</div>
+				<div id="player2" class="player">
+					Jugador 2
+					<select name="pieces" id="peon2">
+						<option value="buque" selected="selected">Buque de guerra</option>
+						<option value="carretilla">Carretilla</option>
+						<option value="carrito">Carro</option>
+						<option value="dedal">Dedal</option>
+						<option value="perro">Perro</option>
+						<option value="plancha">Plancha</option>
+						<option value="sombrero">Sombrero</option>
+						<option value="zapato">Zapato</option>
+					</select>
+				</div>
+				<div id="player3" class="player">
+					Jugador 3
+					<select name="pieces" id="peon3">
+						<option value="buque" selected="selected">Buque de guerra</option>
+						<option value="carretilla">Carretilla</option>
+						<option value="carrito">Carro</option>
+						<option value="dedal">Dedal</option>
+						<option value="perro">Perro</option>
+						<option value="plancha">Plancha</option>
+						<option value="sombrero">Sombrero</option>
+						<option value="zapato">Zapato</option>
+					</select>
+				</div>
+				<div id="player4" class="player">
+					Jugador 4
+					<select name="pieces" id="peon4">
+						<option value="buque" selected="selected">Buque de guerra</option>
+						<option value="carretilla">Carretilla</option>
+						<option value="carrito">Carro</option>
+						<option value="dedal">Dedal</option>
+						<option value="perro">Perro</option>
+						<option value="plancha">Plancha</option>
+						<option value="sombrero">Sombrero</option>
+						<option value="zapato">Zapato</option>
+					</select>
+				</div>
+				<div id="player5" class="player">
+					Jugador 5
+					<select name="pieces" id="peon5">
+						<option value="buque" selected="selected">Buque de guerra</option>
+						<option value="carretilla">Carretilla</option>
+						<option value="carrito">Carro</option>
+						<option value="dedal">Dedal</option>
+						<option value="perro">Perro</option>
+						<option value="plancha">Plancha</option>
+						<option value="sombrero">Sombrero</option>
+						<option value="zapato">Zapato</option>
+					</select>
+				</div>
+				<div id="player6" class="player">
+					Jugador 6
+					<select name="pieces" id="peon6">
+						<option value="buque" selected="selected">Buque de guerra</option>
+						<option value="carretilla">Carretilla</option>
+						<option value="carrito">Carro</option>
+						<option value="dedal">Dedal</option>
+						<option value="perro">Perro</option>
+						<option value="plancha">Plancha</option>
+						<option value="sombrero">Sombrero</option>
+						<option value="zapato">Zapato</option>
+					</select>
+				</div>
+				<div id="player7" class="player">
+					Jugador 7
+					<select name="pieces" id="peon7">
+						<option value="buque" selected="selected">Buque de guerra</option>
+						<option value="carretilla">Carretilla</option>
+						<option value="carrito">Carro</option>
+						<option value="dedal">Dedal</option>
+						<option value="perro">Perro</option>
+						<option value="plancha">Plancha</option>
+						<option value="sombrero">Sombrero</option>
+						<option value="zapato">Zapato</option>
+					</select>
+				</div>
+				<div id="player8" class="player">
+					Jugador 8
+					<select name="pieces" id="peon8">
+						<option value="buque" selected="selected">Buque de guerra</option>
+						<option value="carretilla">Carretilla</option>
+						<option value="carrito">Carro</option>
+						<option value="dedal">Dedal</option>
+						<option value="perro">Perro</option>
+						<option value="plancha">Plancha</option>
+						<option value="sombrero">Sombrero</option>
+						<option value="zapato">Zapato</option>
+					</select>
+				</div>
+				
+				<button id="play" class="btn" onclick="play()">J U G A R</button>
+				
+				<script>
+					var opcion1;
+					var opcion2;
+					var opcion3;
+					var opcion4;
+					var opcion5;
+					var opcion6;
+					var opcion7;
+					var opcion8;
+					var op1;
+					var op2;
+					var op3;
+					var op4;
+					var op5;
+					var op6;
+					var op7;
+					var op8;
+					var norepetido = false;
+					var value;
+					var turnos = [];
+					var turnostotales = 0;
+					var playersmoney = [];
+					var nplayers;
+					var piezas = [];
+					var dadoTirado = false;
+					var contadorPasos = [];
+					var piezasJugadores = [];
+					var inventarioJugador = [];
+					var propiedades = [];
+					var communityCards = [];
+					var chanceCards = [];
+					var railroadJugadores = [];
+					var companyJugadores = [];
+					var jugadorEvent;
+					var nEvent;
+					var divprops = [];
+					
+					function tirarDado(){
+						var dialog = document.getElementById("comprar");
+						var newDiv = document.createElement("DIV");
+						var rng = parseInt(Math.random()*6)+1;
+						newDiv.innerHTML = "El dado cayó "+rng;
+						dialog.append(newDiv);
+						switch(rng){
+							case 1:
+								document.getElementById("img1").style.visibility = "hidden";
+								document.getElementById("img2").style.visibility = "hidden";
+								document.getElementById("img3").style.visibility = "hidden";
+								document.getElementById("img4").style.visibility = "hidden";
+								document.getElementById("img5").style.visibility = "visible";
+								document.getElementById("img6").style.visibility = "hidden";
+								document.getElementById("img7").style.visibility = "hidden";
+								document.getElementById("img8").style.visibility = "hidden";
+								document.getElementById("img9").style.visibility = "hidden";
+								break;
+							case 2:
+								document.getElementById("img1").style.visibility = "visible";
+								document.getElementById("img2").style.visibility = "hidden";
+								document.getElementById("img3").style.visibility = "hidden";
+								document.getElementById("img4").style.visibility = "hidden";
+								document.getElementById("img5").style.visibility = "hidden";
+								document.getElementById("img6").style.visibility = "hidden";
+								document.getElementById("img7").style.visibility = "hidden";
+								document.getElementById("img8").style.visibility = "hidden";
+								document.getElementById("img9").style.visibility = "visible";
+								break;
+							case 3:
+								document.getElementById("img1").style.visibility = "visible";
+								document.getElementById("img2").style.visibility = "hidden";
+								document.getElementById("img3").style.visibility = "hidden";
+								document.getElementById("img4").style.visibility = "hidden";
+								document.getElementById("img5").style.visibility = "visible";
+								document.getElementById("img6").style.visibility = "hidden";
+								document.getElementById("img7").style.visibility = "hidden";
+								document.getElementById("img8").style.visibility = "hidden";
+								document.getElementById("img9").style.visibility = "visible";
+								break;
+							case 4:
+								document.getElementById("img1").style.visibility = "visible";
+								document.getElementById("img2").style.visibility = "hidden";
+								document.getElementById("img3").style.visibility = "visible";
+								document.getElementById("img4").style.visibility = "hidden";
+								document.getElementById("img5").style.visibility = "hidden";
+								document.getElementById("img6").style.visibility = "hidden";
+								document.getElementById("img7").style.visibility = "visible";
+								document.getElementById("img8").style.visibility = "hidden";
+								document.getElementById("img9").style.visibility = "visible";
+								break;
+							case 5:
+								document.getElementById("img1").style.visibility = "visible";
+								document.getElementById("img2").style.visibility = "hidden";
+								document.getElementById("img3").style.visibility = "visible";
+								document.getElementById("img4").style.visibility = "hidden";
+								document.getElementById("img5").style.visibility = "visible";
+								document.getElementById("img6").style.visibility = "hidden";
+								document.getElementById("img7").style.visibility = "visible";
+								document.getElementById("img8").style.visibility = "hidden";
+								document.getElementById("img9").style.visibility = "visible";
+								break;
+							case 6:
+								document.getElementById("img1").style.visibility = "visible";
+								document.getElementById("img2").style.visibility = "hidden";
+								document.getElementById("img3").style.visibility = "visible";
+								document.getElementById("img4").style.visibility = "visible";
+								document.getElementById("img5").style.visibility = "hidden";
+								document.getElementById("img6").style.visibility = "visible";
+								document.getElementById("img7").style.visibility = "visible";
+								document.getElementById("img8").style.visibility = "hidden";
+								document.getElementById("img9").style.visibility = "visible";
+								break;
+						}
+						calcularPasos(turnos[turnostotales],rng);
+						disableDice();
+						enableTerminar();
+					}
+					
+					function disableDice(){
+						document.getElementById("rolldice").style.visibility = "hidden";
+					}
+					
+					function enableDice(){
+						document.getElementById("rolldice").style.visibility = "visible";
+					}
+					
+					function enableTerminar(){
+						document.getElementById("terminar").style.visibility = "visible";
+					}
+					
+					function disableTerminar(){
+						document.getElementById("terminar").style.visibility = "hidden";
+					}
+					
+					function disableComprar(){
+						document.getElementById("buy").style.display = "none";
+					}
+					
+					function showCompras(){
+						document.getElementById("tab2").style.display = "none";
+						document.getElementById("tab1").style.display = "block";
+					}
+					
+					function showPropiedades(){
+						document.getElementById("tab1").style.display = "none";
+						document.getElementById("tab2").style.display = "block";
+					}
+					
+					function showPropiedadesJugador(player){
+						var numero = player;
+						numero+=1;
+						var nombre = "jugador" + numero;
+						for(var i=0;i<nplayers;i++){
+							var number = i + 1;
+							var name = "jugador" + number;
+							document.getElementById(name).style.display = "none";
+						}
+						document.getElementById(nombre).style.display = "block";
+					}
+					
+					function calcularPasos(player,number){
+						var newDiv = document.createElement("DIV");
+						var dialog = document.getElementById("comprar");
+						var id = "casilla";
+						contadorPasos[player-1]+=number;
+						if(contadorPasos[player-1] > 40){
+							switch(contadorPasos[player-1]){
+								case 41:
+									contadorPasos[player-1]=1;
+									playersmoney[player-1]+=200;
+									var newDiv2 = document.createElement("DIV");
+									newDiv2.innerHTML = "+200 POR PASAR POR SALIDA"
+									newDiv2.style.color = "green";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv2);
+									break;
+								case 42:
+									contadorPasos[player-1]=2;
+									playersmoney[player-1]+=200;
+									var newDiv2 = document.createElement("DIV");
+									newDiv2.innerHTML = "+200 POR PASAR POR SALIDA"
+									newDiv2.style.color = "green";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv2);
+									break;
+								case 43:
+									contadorPasos[player-1]=3;
+									playersmoney[player-1]+=200;
+									var newDiv2 = document.createElement("DIV");
+									newDiv2.innerHTML = "+200 POR PASAR POR SALIDA"
+									newDiv2.style.color = "green";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv2);
+									break;
+								case 44:
+									contadorPasos[player-1]=4;
+									playersmoney[player-1]+=200;
+									var newDiv2 = document.createElement("DIV");
+									newDiv2.innerHTML = "+200 POR PASAR POR SALIDA"
+									newDiv2.style.color = "green";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv2);
+									break;
+								case 45:
+									contadorPasos[player-1]=5;
+									playersmoney[player-1]+=200;
+									var newDiv2 = document.createElement("DIV");
+									newDiv2.innerHTML = "+200 POR PASAR POR SALIDA"
+									newDiv2.style.color = "green";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv2);
+									break;
+								case 46:
+									contadorPasos[player-1]=6;
+									playersmoney[player-1]+=200;
+									var newDiv2 = document.createElement("DIV");
+									newDiv2.innerHTML = "+200 POR PASAR POR SALIDA"
+									newDiv2.style.color = "green";
+									dialog.append(newDiv2);
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									break;
+							}
+						}
+						id+=contadorPasos[player-1];
+						casillaCaida(player-1,id);
+						console.log(contadorPasos[player-1]);
+						console.log(id);
+						var posicion = document.getElementById(id).innerHTML;
+						newDiv.innerHTML = "El jugador "+player+" cayó en "+posicion;
+						moverPieza(player,contadorPasos[player-1]);
+						newDiv.style.color = "black";
+						dialog.append(newDiv);
+						newDiv.scrollIntoView(false);
+						document.getElementById("playermoney").innerHTML = +playersmoney[turnos[turnostotales]-1];
+					}
+					
+					function moverPieza(jugador,posicion){//empieza en 77em
+						switch(posicion){
+							case 1:
+								piezasJugadores[jugador-1].querySelector("img").style.top = "48em";
+								piezasJugadores[jugador-1].querySelector("img").style.left = "72em";break;
+							case 2:
+								piezasJugadores[jugador-1].querySelector("img").style.top = "48em";
+								piezasJugadores[jugador-1].querySelector("img").style.left = "67em";break;
+							case 3:
+								piezasJugadores[jugador-1].querySelector("img").style.top = "48em";
+								piezasJugadores[jugador-1].querySelector("img").style.left = "63em";break;
+							case 4:
+								piezasJugadores[jugador-1].querySelector("img").style.top = "48em";
+								piezasJugadores[jugador-1].querySelector("img").style.left = "59em";break;
+							case 5:
+								piezasJugadores[jugador-1].querySelector("img").style.top = "48em";
+								piezasJugadores[jugador-1].querySelector("img").style.left = "56em";break;
+							case 6: 
+								piezasJugadores[jugador-1].querySelector("img").style.top = "48em";
+								piezasJugadores[jugador-1].querySelector("img").style.left = "51em";break;
+							case 7: 
+								piezasJugadores[jugador-1].querySelector("img").style.top = "48em";
+								piezasJugadores[jugador-1].querySelector("img").style.left = "48em";break;
+							case 8: 
+								piezasJugadores[jugador-1].querySelector("img").style.top = "48em";
+								piezasJugadores[jugador-1].querySelector("img").style.left = "43em";break;
+							case 9: 
+								piezasJugadores[jugador-1].querySelector("img").style.top = "48em";
+								piezasJugadores[jugador-1].querySelector("img").style.left = "40em";break;
+							case 10:
+								piezasJugadores[jugador-1].querySelector("img").style.top = "48em";
+								piezasJugadores[jugador-1].querySelector("img").style.left = "32em";break;
+							case 11:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "32em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "42em";break;
+							case 12:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "32em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "37em";break;
+							case 13:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "32em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "34em";break;
+							case 14:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "32em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "29em";break;
+							case 15:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "32em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "26em";break;
+							case 16:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "32em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "21em";break;
+							case 17:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "32em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "17em";break;
+							case 18:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "32em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "14em";break;
+							case 19:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "32em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "10em";break;
+							case 20:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "32em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "2em";break;
+							case 21:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "40em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "2em";break;
+							case 22:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "43em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "2em";break;
+							case 23:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "48em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "2em";break;
+							case 24:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "51em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "2em";break;
+							case 25:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "56em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "2em";break;
+							case 26:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "59em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "2em";break;
+							case 27:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "63em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "2em";break;
+							case 28:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "67em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "2em";break;
+							case 29:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "72em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "2em";break;
+							case 30:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "77em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "2em";break;
+							case 31:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "77em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "10em";break;
+							case 32:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "77em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "14em";break;
+							case 33:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "77em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "17em";break;
+							case 34:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "77em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "21em";break;
+							case 35:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "77em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "26em";break;
+							case 36:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "77em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "29em";break;
+							case 37:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "77em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "34em";break;
+							case 38:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "77em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "37em";break;
+							case 39:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "77em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "42em";break;
+							case 40:
+								piezasJugadores[jugador-1].querySelector("img").style.left = "77em";
+								piezasJugadores[jugador-1].querySelector("img").style.top = "48em";break;
+						}
+					}
+					
+					function comprarPropiedad(jugador,propiedad){
+						var numerito = jugador;
+						numerito+=1;
+						var nombrediv = "jugador" + numerito;
+						var dialog = document.getElementById("comprar");
+						var prop = document.createElement("DIV");
+						var precios = document.createElement("P");
+						precios.setAttribute("class","preciospropiedades");
+						prop.setAttribute("class","propiedad");
+						var color = document.createElement("DIV");
+						color.setAttribute("class","color");
+						var nombreprop = document.createElement("DIV");
+						nombreprop.setAttribute("class","npropiedad");
+						var nombre = document.createElement("P");
+						nombre.setAttribute("class","nombrepropiedad");
+						var colour;
+						switch(propiedad){
+							case 0:
+								if(playersmoney[jugador]<propiedades[propiedad].precio){
+									alert("NO TE ALCANZA, MEN");
+								}else{
+									propiedades[propiedad].propietario=jugador;
+									inventarioJugador[jugador]=propiedades[propiedad];
+									playersmoney[jugador]-=propiedades[propiedad].precio;
+								}
+								break;
+							case 1:
+								if(playersmoney[jugador]<propiedades[propiedad].precio){
+									alert("NO TE ALCANZA, MEN");
+								}else{
+									propiedades[propiedad].propietario=jugador;
+									inventarioJugador[jugador]=propiedades[propiedad];
+									playersmoney[jugador]-=propiedades[propiedad].precio;
+								}
+								break;
+							case 2:
+								if(playersmoney[jugador]<propiedades[propiedad].precio){
+									alert("NO TE ALCANZA, MEN");
+								}else{
+									propiedades[propiedad].propietario=jugador;
+									inventarioJugador[jugador]=propiedades[propiedad];
+									playersmoney[jugador]-=propiedades[propiedad].precio;
+								}
+								break;
+							case 3:
+								if(playersmoney[jugador]<propiedades[propiedad].precio){
+									alert("NO TE ALCANZA, MEN");
+								}else{
+									propiedades[propiedad].propietario=jugador;
+									inventarioJugador[jugador]=propiedades[propiedad];
+									playersmoney[jugador]-=propiedades[propiedad].precio;
+								}
+								break;
+							case 4:
+								if(playersmoney[jugador]<propiedades[propiedad].precio){
+									alert("NO TE ALCANZA, MEN");
+								}else{
+									propiedades[propiedad].propietario=jugador;
+									inventarioJugador[jugador]=propiedades[propiedad];
+									playersmoney[jugador]-=propiedades[propiedad].precio;
+								}
+								break;
+							case 5:
+								if(playersmoney[jugador]<propiedades[propiedad].precio){
+									alert("NO TE ALCANZA, MEN");
+								}else{
+									propiedades[propiedad].propietario=jugador;
+									inventarioJugador[jugador]=propiedades[propiedad];
+									playersmoney[jugador]-=propiedades[propiedad].precio;
+								}
+								break;
+							case 6:
+								if(playersmoney[jugador]<propiedades[propiedad].precio){
+									alert("NO TE ALCANZA, MEN");
+								}else{
+									propiedades[propiedad].propietario=jugador;
+									inventarioJugador[jugador]=propiedades[propiedad];
+									playersmoney[jugador]-=propiedades[propiedad].precio;
+								}
+								break;
+							case 17:
+								if(playersmoney[jugador]<propiedades[propiedad].precio){
+									alert("NO TE ALCANZA, MEN");
+								}else{
+									propiedades[propiedad].propietario=jugador;
+									inventarioJugador[jugador]=propiedades[propiedad];
+									playersmoney[jugador]-=propiedades[propiedad].precio;
+								}
+								break;
+							case 18:
+								if(playersmoney[jugador]<propiedades[propiedad].precio){
+									alert("NO TE ALCANZA, MEN");
+								}else{
+									propiedades[propiedad].propietario=jugador;
+									inventarioJugador[jugador]=propiedades[propiedad];
+									playersmoney[jugador]-=propiedades[propiedad].precio;
+								}
+								break;
+							case 19:
+								if(playersmoney[jugador]<propiedades[propiedad].precio){
+									alert("NO TE ALCANZA, MEN");
+								}else{
+									propiedades[propiedad].propietario=jugador;
+									inventarioJugador[jugador]=propiedades[propiedad];
+									playersmoney[jugador]-=propiedades[propiedad].precio;
+								}
+								break;
+							case 20:
+								propiedades[propiedad].propietario=jugador;
+								inventarioJugador[jugador]=propiedades[propiedad];
+								playersmoney[jugador]-=propiedades[propiedad].precio;
+								break;
+							case 21:
+								propiedades[propiedad].propietario=jugador;
+								inventarioJugador[jugador]=propiedades[propiedad];
+								playersmoney[jugador]-=propiedades[propiedad].precio;
+								break;
+							case 22:
+								propiedades[propiedad].propietario=jugador;
+								inventarioJugador[jugador]=propiedades[propiedad];
+								playersmoney[jugador]-=propiedades[propiedad].precio;
+								break;
+							case 23:
+								propiedades[propiedad].propietario=jugador;
+								inventarioJugador[jugador]=propiedades[propiedad];
+								playersmoney[jugador]-=propiedades[propiedad].precio;
+								break;
+							case 24:
+								propiedades[propiedad].propietario=jugador;
+								inventarioJugador[jugador]=propiedades[propiedad];
+								playersmoney[jugador]-=propiedades[propiedad].precio;
+								break;
+							case 25:
+								propiedades[propiedad].propietario=jugador;
+								inventarioJugador[jugador]=propiedades[propiedad];
+								playersmoney[jugador]-=propiedades[propiedad].precio;
+								break;
+							case 26:
+								propiedades[propiedad].propietario=jugador;
+								inventarioJugador[jugador]=propiedades[propiedad];
+								playersmoney[jugador]-=propiedades[propiedad].precio;
+								break;
+							case 27:
+								propiedades[propiedad].propietario=jugador;
+								inventarioJugador[jugador]=propiedades[propiedad];
+								playersmoney[jugador]-=propiedades[propiedad].precio;
+								break;
+						}
+						if(playersmoney[jugador]<propiedades[propiedad].precio){
+							alert("NO TE ALCANZA, MEN");
+						}else{
+							if(propiedades[propiedad].type=="railroad"){
+								colour="black";
+								railroadJugadores[jugador]++;
+							}else if(propiedades[propiedad].type=="company"){
+								colour="white";
+								companyJugadores[jugador]++;
+							}else if(propiedades[propiedad].type=="property"){
+								switch(propiedades[propiedad].color){
+									case "brown":colour="rgb(149,84,54)";break;
+									case "light-blue":colour="rgb(170,224,250)";break;
+									case "pink":colour="rgb(217,58,150)";break;
+									case "orange":colour="rgb(247,148,29)";break;
+									case "red":colour="rgb(238,27,36)";break;
+									case "yellow":colour="rgb(249,242,3)";break;
+									case "green":colour="rgb(31,178,90)";break;
+									case "blue":colour="rgb(149,84,54)";break;
+								}
+								precios.innerHTML = "1 CASA: "+propiedades[propiedad].casa1+" | 2 CASAS: "+propiedades[propiedad].casa2+
+									" | 3 CASAS: "+propiedades[propiedad].casa3+" | 4 CASAS: "+propiedades[propiedad].casa4+
+									" | HOTEL: "+propiedades[propiedad].hotel;
+							}
+							propiedades[propiedad].propietario=jugador;
+							propiedades[propiedad].tienePropietario=true;
+							playersmoney[jugador]-=propiedades[propiedad].precio;
+							var newDiv1 = document.createElement("DIV");
+							newDiv1.innerHTML = "COMPRÓ LA PROPIEDAD";
+							newDiv1.style.color = "blue";
+							dialog.append(newDiv1);
+							newDiv1.scrollIntoView(false);
+							alert("Se compró la propiedad "+propiedades[propiedad].name+" por el jugador "+(jugador+1));
+							document.getElementById("playermoney").innerHTML = playersmoney[jugador];
+							inventarioJugador[jugador]++;
+							
+							color.style.backgroundColor = colour;
+							nombreprop.innerHTML = propiedades[propiedad].name;
+							prop.append(color);
+							nombreprop.append(nombre);
+							nombreprop.append(precios);
+							prop.append(nombreprop);
+							document.getElementById(nombrediv).append(prop);
+							showPropiedadesJugador(jugador);
+						}
+						document.getElementById("buy").style.display = "none";
+					}
+					
+					function tirarDadoAlquiler(){
+						var rng = parseInt(Math.random()*6)+1;
+						switch(rng){
+							case 1:
+								document.getElementById("img1").style.visibility = "hidden";
+								document.getElementById("img2").style.visibility = "hidden";
+								document.getElementById("img3").style.visibility = "hidden";
+								document.getElementById("img4").style.visibility = "hidden";
+								document.getElementById("img5").style.visibility = "visible";
+								document.getElementById("img6").style.visibility = "hidden";
+								document.getElementById("img7").style.visibility = "hidden";
+								document.getElementById("img8").style.visibility = "hidden";
+								document.getElementById("img9").style.visibility = "hidden";
+								break;
+							case 2:
+								document.getElementById("img1").style.visibility = "visible";
+								document.getElementById("img2").style.visibility = "hidden";
+								document.getElementById("img3").style.visibility = "hidden";
+								document.getElementById("img4").style.visibility = "hidden";
+								document.getElementById("img5").style.visibility = "hidden";
+								document.getElementById("img6").style.visibility = "hidden";
+								document.getElementById("img7").style.visibility = "hidden";
+								document.getElementById("img8").style.visibility = "hidden";
+								document.getElementById("img9").style.visibility = "visible";
+								break;
+							case 3:
+								document.getElementById("img1").style.visibility = "visible";
+								document.getElementById("img2").style.visibility = "hidden";
+								document.getElementById("img3").style.visibility = "hidden";
+								document.getElementById("img4").style.visibility = "hidden";
+								document.getElementById("img5").style.visibility = "visible";
+								document.getElementById("img6").style.visibility = "hidden";
+								document.getElementById("img7").style.visibility = "hidden";
+								document.getElementById("img8").style.visibility = "hidden";
+								document.getElementById("img9").style.visibility = "visible";
+								break;
+							case 4:
+								document.getElementById("img1").style.visibility = "visible";
+								document.getElementById("img2").style.visibility = "hidden";
+								document.getElementById("img3").style.visibility = "visible";
+								document.getElementById("img4").style.visibility = "hidden";
+								document.getElementById("img5").style.visibility = "hidden";
+								document.getElementById("img6").style.visibility = "hidden";
+								document.getElementById("img7").style.visibility = "visible";
+								document.getElementById("img8").style.visibility = "hidden";
+								document.getElementById("img9").style.visibility = "visible";
+								break;
+							case 5:
+								document.getElementById("img1").style.visibility = "visible";
+								document.getElementById("img2").style.visibility = "hidden";
+								document.getElementById("img3").style.visibility = "visible";
+								document.getElementById("img4").style.visibility = "hidden";
+								document.getElementById("img5").style.visibility = "visible";
+								document.getElementById("img6").style.visibility = "hidden";
+								document.getElementById("img7").style.visibility = "visible";
+								document.getElementById("img8").style.visibility = "hidden";
+								document.getElementById("img9").style.visibility = "visible";
+								break;
+							case 6:
+								document.getElementById("img1").style.visibility = "visible";
+								document.getElementById("img2").style.visibility = "hidden";
+								document.getElementById("img3").style.visibility = "visible";
+								document.getElementById("img4").style.visibility = "visible";
+								document.getElementById("img5").style.visibility = "hidden";
+								document.getElementById("img6").style.visibility = "visible";
+								document.getElementById("img7").style.visibility = "visible";
+								document.getElementById("img8").style.visibility = "hidden";
+								document.getElementById("img9").style.visibility = "visible";
+								break;
+						}
+						return rng;
+					}
+					
+					function triggerBuyEvent(){
+						comprarPropiedad(jugadorEvent,nEvent);
+					}
+					
+					function casillaCaida(player,id){
+						var dialog = document.getElementById("comprar");
+						switch(id){
+							case "casilla1":
+								if(!propiedades[0].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=0;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[0].hipotecado){
+									playersmoney[player]-=propiedades[0].alquiler;
+									playersmoney[propiedades[0].propietario]+=propiedades[0].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[0].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//mediterranean avenue
+							case "casilla2":break;//community chest
+							case "casilla3":
+								if(!propiedades[1].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=1;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[1].hipotecado){
+									playersmoney[player]-=propiedades[1].alquiler;
+									playersmoney[propiedades[1].propietario]+=propiedades[1].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[1].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//baltic avenue
+							case "casilla4":
+								playersmoney[player]-=200;
+								var newDiv = document.createElement("DIV");
+								newDiv.innerHTML = "-200 POR IMPUESTO DE INGRESOS"
+								newDiv.style.color = "red";
+								document.getElementById("playermoney").innerHTML = playersmoney[player];
+								dialog.append(newDiv);
+								newDiv.scrollIntoView(false);
+								break;//income tax
+							case "casilla5":
+								if(!propiedades[2].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=2;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[2].hipotecado){
+									var alquiler;
+									switch(railroadJugadores[player]){
+										case 1:alquiler=25;break;
+										case 2:alquiler=50;break;
+										case 3:alquiler=100;break;
+										case 4:alquiler=200;break;
+									}
+									playersmoney[player]-=alquiler;
+									playersmoney[propiedades[2].propietario]+=alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[2].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//reading railroad
+							case "casilla6":
+								if(!propiedades[3].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=3;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[3].hipotecado){
+									playersmoney[player]-=propiedades[3].alquiler;
+									playersmoney[propiedades[3].propietario]+=propiedades[3].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[3].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//oriental avenue
+							case "casilla7":break;//chance
+							case "casilla8":
+								if(!propiedades[4].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=4;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[4].hipotecado){
+									playersmoney[player]-=propiedades[4].alquiler;
+									playersmoney[propiedades[4].propietario]+=propiedades[4].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[4].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//vermont avenue
+							case "casilla9":
+								if(!propiedades[5].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=5;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[5].hipotecado){
+									playersmoney[player]-=propiedades[5].alquiler;
+									playersmoney[propiedades[5].propietario]+=propiedades[5].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[5].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//connecticut avenue
+							case "casilla10":break;//jail
+							case "casilla11":
+								if(!propiedades[6].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=6;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[6].hipotecado){
+									playersmoney[player]-=propiedades[6].alquiler;
+									playersmoney[propiedades[6].propietario]+=propiedades[6].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[6].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//s.t. charles avenue
+							case "casilla12":
+								if(!propiedades[7].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=7;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[7].hipotecado){
+									var alquiler;
+									switch(companyJugadores[player]){
+										case 1:alquiler=4*(tirarDadoAlquiler());break;
+										case 2:alquiler=10*(tirarDadoAlquiler());break;
+									}
+									playersmoney[player]-=alquiler;
+									playersmoney[propiedades[7].propietario]+=alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[7].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//electric company
+							case "casilla13":
+								if(!propiedades[8].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=8;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[8].hipotecado){
+									playersmoney[player]-=propiedades[8].alquiler;
+									playersmoney[propiedades[8].propietario]+=propiedades[8].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[8].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//states avenue
+							case "casilla14":
+								if(!propiedades[9].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=9;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[9].hipotecado){
+									playersmoney[player]-=propiedades[9].alquiler;
+									playersmoney[propiedades[9].propietario]+=propiedades[9].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[9].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//virginia avenue
+							case "casilla15":
+								if(!propiedades[10].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=10;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[10].hipotecado){
+									var alquiler;
+									switch(railroadJugadores[player]){
+										case 1:alquiler=25;break;
+										case 2:alquiler=50;break;
+										case 3:alquiler=100;break;
+										case 4:alquiler=200;break;
+									}
+									playersmoney[player]-=alquiler;
+									playersmoney[propiedades[10].propietario]+=alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//pennsylvania road
+							case "casilla16":
+								if(!propiedades[11].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=11;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[11].hipotecado){
+									playersmoney[player]-=propiedades[11].alquiler;
+									playersmoney[propiedades[11].propietario]+=propiedades[11].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[11].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//s.t. james place
+							case "casilla17":break;//community chest
+							case "casilla18":
+								if(!propiedades[12].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=12;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[12].hipotecado){
+									playersmoney[player]-=propiedades[12].alquiler;
+									playersmoney[propiedades[12].propietario]+=propiedades[12].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[12].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//tennesse avenue
+							case "casilla19":
+								if(!propiedades[13].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=13;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[13].hipotecado){
+									playersmoney[player]-=propiedades[13].alquiler;
+									playersmoney[propiedades[13].propietario]+=propiedades[13].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[13].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//new york avenue
+							case "casilla20":break;//parking
+							case "casilla21":
+								if(!propiedades[14].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=14;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[14].hipotecado){
+									playersmoney[player]-=propiedades[14].alquiler;
+									playersmoney[propiedades[14].propietario]+=propiedades[14].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[14].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//kentucky avenue
+							case "casilla22":break;//chance
+							case "casilla23":
+								if(!propiedades[15].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=15;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[15].hipotecado){
+									playersmoney[player]-=propiedades[15].alquiler;
+									playersmoney[propiedades[15].propietario]+=propiedades[15].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[15].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//indiana avenue
+							case "casilla24":
+								if(!propiedades[16].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=16;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[16].hipotecado){
+									playersmoney[player]-=propiedades[16].alquiler;
+									playersmoney[propiedades[16].propietario]+=propiedades[16].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[16].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//illinois avenue
+							case "casilla25":
+								if(!propiedades[17].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=17;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[17].hipotecado){
+									var alquiler;
+									switch(railroadJugadores[player]){
+										case 1:alquiler=25;break;
+										case 2:alquiler=50;break;
+										case 3:alquiler=100;break;
+										case 4:alquiler=200;break;
+									}
+									playersmoney[player]-=alquiler;
+									playersmoney[propiedades[17].propietario]+=alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//b & o railroad
+							case "casilla26":
+								if(!propiedades[18].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=18;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[18].hipotecado){
+									playersmoney[player]-=propiedades[18].alquiler;
+									playersmoney[propiedades[18].propietario]+=propiedades[18].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[18].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//atlantic avenue
+							case "casilla27":
+								if(!propiedades[19].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=19;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[19].hipotecado){
+									playersmoney[player]-=propiedades[19].alquiler;
+									playersmoney[propiedades[19].propietario]+=propiedades[19].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[19].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//ventnor avenue
+							case "casilla28":
+								if(!propiedades[20].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=20;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[20].hipotecado){
+									var alquiler;
+									switch(companyJugadores[player]){
+										case 1:alquiler=4*(tirarDadoAlquiler());break;
+										case 2:alquiler=10*(tirarDadoAlquiler());break;
+									}
+									playersmoney[player]-=alquiler;
+									playersmoney[propiedades[20].propietario]+=alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[20].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//waterworks
+							case "casilla29":
+								if(!propiedades[21].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=21;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[21].hipotecado){
+									playersmoney[player]-=propiedades[21].alquiler;
+									playersmoney[propiedades[21].propietario]+=propiedades[21].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[21].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//marvin gardens
+							case "casilla30":break;//gotojail
+							case "casilla31":
+								if(!propiedades[22].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=22;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[2].hipotecado){
+									playersmoney[player]-=propiedades[22].alquiler;
+									playersmoney[propiedades[22].propietario]+=propiedades[22].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[22].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//pacific avenue
+							case "casilla32":
+								if(!propiedades[23].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=23;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[23].hipotecado){
+									playersmoney[player]-=propiedades[23].alquiler;
+									playersmoney[propiedades[23].propietario]+=propiedades[23].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[23].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//north carolina avenue
+							case "casilla33":break;//community chest
+							case "casilla34":
+								if(!propiedades[24].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=24;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[24].hipotecado){
+									playersmoney[player]-=propiedades[24].alquiler;
+									playersmoney[propiedades[24].propietario]+=propiedades[24].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[24].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//pennsylvania avenue
+							case "casilla35":break;//chance
+							case "casilla36":
+								if(!propiedades[25].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=25;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[25].hipotecado){
+									var alquiler;
+									switch(railroadJugadores[player]){
+										case 1:alquiler=25;break;
+										case 2:alquiler=50;break;
+										case 3:alquiler=100;break;
+										case 4:alquiler=200;break;
+									}
+									playersmoney[player]-=alquiler;
+									playersmoney[propiedades[25].propietario]+=alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//short line
+							case "casilla37":
+								if(!propiedades[26].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=26;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[26].hipotecado){
+									playersmoney[player]-=propiedades[26].alquiler;
+									playersmoney[propiedades[26].propietario]+=propiedades[26].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[26].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//park place
+							case "casilla38":
+								playersmoney[player]-=100;
+								var newDiv2 = document.createElement("DIV");
+								newDiv2.innerHTML = "-100 POR IMPUESTO DE LUJO"
+								newDiv2.style.color = "red";
+								document.getElementById("playermoney").innerHTML = playersmoney[player];
+								dialog.append(newDiv2);
+								newDiv.scrollIntoView(false);
+								break;//luxury tax
+							case "casilla39":
+								console.log(propiedades.length);
+								if(!propiedades[27].tienePropietario){
+									document.getElementById("buy").style.display = "block";
+									jugadorEvent = player;
+									nEvent=27;
+									document.getElementById("buy").removeEventListener("click",triggerBuyEvent);
+									document.getElementById("buy").addEventListener("click",triggerBuyEvent);
+								}else if(!propiedades[27].hipotecado){
+									playersmoney[player]-=propiedades[27].alquiler;
+									playersmoney[propiedades[27].propietario]+=propiedades[27].alquiler;
+									var newDiv = document.createElement("DIV");
+									newDiv.innerHTML = "-"+propiedades[27].alquiler+" POR ALQUILER";
+									newDiv.style.color = "red";
+									document.getElementById("playermoney").innerHTML = playersmoney[player];
+									dialog.append(newDiv);
+									newDiv.scrollIntoView(false);
+								}
+								break;//broadwalk
+							case "casilla40":
+								playersmoney[player]+=200;
+								var newDiv = document.createElement("DIV");
+								newDiv.innerHTML = "+200 POR PASAR POR SALIDA"
+								newDiv.style.color = "green";
+								document.getElementById("playermoney").innerHTML = playersmoney[player];
+								dialog.append(newDiv);
+								contadorPasos[player]=0;
+								newDiv.scrollIntoView(false);
+								break;//go
+						}
+					}
+					
+					function initPasos(){
+						for(var i=0;i<nplayers;i++){
+							contadorPasos[i]=0;
+						}
+					}
+					
+					function initPiezasJugadores(){
+						var p1 = opcion1.options[opcion1.selectedIndex].innerHTML;
+						var p2 = opcion2.options[opcion2.selectedIndex].innerHTML;
+						var p3 = opcion3.options[opcion3.selectedIndex].innerHTML;
+						var p4 = opcion4.options[opcion4.selectedIndex].innerHTML;
+						var p5 = opcion5.options[opcion5.selectedIndex].innerHTML;
+						var p6 = opcion6.options[opcion6.selectedIndex].innerHTML;
+						var p7 = opcion7.options[opcion7.selectedIndex].innerHTML;
+						var p8 = opcion8.options[opcion8.selectedIndex].innerHTML;
+						var elementos = [p1,p2,p3,p4,p5,p6,p7,p8];
+						for(var i=0;i<nplayers;i++){
+							switch(elementos[i]){
+								case "Buque de guerra":
+									piezasJugadores[i] = document.getElementById("buq");
+									break;
+								case "Carretilla":
+									piezasJugadores[i] = document.getElementById("carre");
+									break;
+								case "Carro":
+									piezasJugadores[i] = document.getElementById("carro");
+									break;
+								case "Dedal":
+									piezasJugadores[i] = document.getElementById("ded");
+									break;
+								case "Perro":
+									piezasJugadores[i] = document.getElementById("perro");
+									break;
+								case "Plancha":
+									piezasJugadores[i] = document.getElementById("pla");
+									break;
+								case "Sombrero":
+									piezasJugadores[i] = document.getElementById("som");
+									break;
+								case "Zapato":
+									piezasJugadores[i] = document.getElementById("zap");
+									break;
+							}
+							piezasJugadores[i].style.visibility = "visible";
+						}
+					}
+					
+					function initPropiedades(){
+						for(var i=0;i<28;i++){
+							switch(i){
+								case 0:
+									var propiedad = {
+										type:"property",
+										name:"Mediterranean Avenue",
+										precio:60,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:2,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"brown",
+										casa1:10,
+										casa2:30,
+										casa3:90,
+										casa4:160,
+										hotel:250
+									};
+									propiedades.push(propiedad);
+									break;
+								case 1:
+									var propiedad = {
+										type:"property",
+										name:"Baltic Avenue",
+										precio:60,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:4,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"brown",
+										casa1:20,
+										casa2:60,
+										casa3:180,
+										casa4:320,
+										hotel:450
+									};
+									propiedades.push(propiedad);
+									break;
+								case 2:
+									var propiedad = {
+										type:"railroad",
+										name:"Reading Railroad",
+										precio:200,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:25,
+										nRailroad:0,
+										color:"black"
+									};
+									propiedades.push(propiedad);
+									break;
+								case 3:
+									var propiedad = {
+										type:"property",
+										name:"Oriental Avenue",
+										precio:100,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:6,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"light-blue",
+										casa1:30,
+										casa2:90,
+										casa3:270,
+										casa4:400,
+										hotel:550
+									};
+									propiedades.push(propiedad);
+									break;
+								case 4:
+									var propiedad = {
+										type:"property",
+										name:"Vermont Avenue",
+										precio:100,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:6,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"light-blue",
+										casa1:30,
+										casa2:90,
+										casa3:270,
+										casa4:400,
+										hotel:550
+									};
+									propiedades.push(propiedad);
+									break;
+								case 5:
+									var propiedad = {
+										type:"property",
+										name:"Connecticut Avenue",
+										precio:120,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:8,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"light-blue",
+										casa1:40,
+										casa2:100,
+										casa3:300,
+										casa4:450,
+										hotel:600
+									};
+									propiedades.push(propiedad);
+									break;
+								case 6:
+									var propiedad = {
+										type:"property",
+										name:"ST. Charles Place",
+										precio:140,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:10,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"pink",
+										casa1:50,
+										casa2:150,
+										casa3:450,
+										casa4:625,
+										hotel:750
+									};
+									propiedades.push(propiedad);
+									break;
+								case 7:
+									var propiedad = {
+										type:"company",
+										name:"Electric Company",
+										precio:150,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:0,
+										nCompany:0,
+										color:"white"
+									};
+									propiedades.push(propiedad);
+									break;
+								case 8:
+									var propiedad = {
+										type:"property",
+										name:"States Avenue",
+										precio:140,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:10,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"pink",
+										casa1:50,
+										casa2:150,
+										casa3:450,
+										casa4:625,
+										hotel:750
+									};
+									propiedades.push(propiedad);
+									break;
+								case 9:
+									var propiedad = {
+										type:"property",
+										name:"Virginia Avenue",
+										precio:160,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:12,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"pink",
+										casa1:60,
+										casa2:180,
+										casa3:500,
+										casa4:700,
+										hotel:900
+									};
+									propiedades.push(propiedad);
+									break;
+								case 10:
+									var propiedad = {
+										type:"railroad",
+										name:"Pennsylvania Railroad",
+										precio:200,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:25,
+										nRailroad:0,
+										color:"black"
+									};
+									propiedades.push(propiedad);
+									break;
+								case 11:
+									var propiedad = {
+										type:"property",
+										name:"ST. James Place",
+										precio:180,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:14,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"orange",
+										casa1:70,
+										casa2:200,
+										casa3:550,
+										casa4:750,
+										hotel:950
+									};
+									propiedades.push(propiedad);
+									break;
+								case 12:
+									var propiedad = {
+										type:"property",
+										name:"Tennessee Avenue",
+										precio:180,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:14,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"orange",
+										casa1:70,
+										casa2:200,
+										casa3:550,
+										casa4:750,
+										hotel:950
+									};
+									propiedades.push(propiedad);
+									break;
+								case 13:
+									var propiedad = {
+										type:"property",
+										name:"New York Avenue",
+										precio:200,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:16,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"orange",
+										casa1:80,
+										casa2:220,
+										casa3:600,
+										casa4:800,
+										hotel:1000
+									};
+									propiedades.push(propiedad);
+									break;
+								case 14:
+									var propiedad = {
+										type:"property",
+										name:"Kentucky Avenue",
+										precio:220,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:18,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"red",
+										casa1:90,
+										casa2:250,
+										casa3:700,
+										casa4:875,
+										hotel:1050
+									};
+									propiedades.push(propiedad);
+									break;
+								case 15:
+									var propiedad = {
+										type:"property",
+										name:"Indiana Avenue",
+										precio:220,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:18,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"red",
+										casa1:90,
+										casa2:250,
+										casa3:700,
+										casa4:875,
+										hotel:1050
+									};
+									propiedades.push(propiedad);
+									break;
+								case 16:
+									var propiedad = {
+										type:"property",
+										name:"Illinois Avenue",
+										precio:240,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:20,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"red",
+										casa1:100,
+										casa2:300,
+										casa3:750,
+										casa4:925,
+										hotel:1100
+									};
+									propiedades.push(propiedad);
+									break;
+								case 17:
+									var propiedad = {
+										type:"railroad",
+										name:"B. & O. Railroad",
+										precio:200,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:25,
+										nRailroad:0,
+										color:"black"
+									};
+									propiedades.push(propiedad);
+									break;
+								case 18:
+									var propiedad = {
+										type:"property",
+										name:"Atlantic Avenue",
+										precio:260,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:22,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"yellow",
+										casa1:110,
+										casa2:330,
+										casa3:800,
+										casa4:975,
+										hotel:1150
+									};
+									propiedades.push(propiedad);
+									break;
+								case 19:
+									var propiedad = {
+										type:"property",
+										name:"Ventnor Avenue",
+										precio:260,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:22,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"yellow",
+										casa1:110,
+										casa2:330,
+										casa3:800,
+										casa4:975,
+										hotel:1150
+									};
+									propiedades.push(propiedad);
+									break;
+								case 20:
+									var propiedad = {
+										type:"company",
+										name:"Water Works",
+										precio:150,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:0,
+										nCompany:0,
+										color:"white"
+									};
+									propiedades.push(propiedad);
+									break;
+								case 21:
+									var propiedad = {
+										type:"property",
+										name:"Marvin Gardens",
+										precio:280,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:24,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"yellow",
+										casa1:120,
+										casa2:360,
+										casa3:850,
+										casa4:1025,
+										hotel:1200
+									};
+									propiedades.push(propiedad);
+									break;
+								case 22:
+									var propiedad = {
+										type:"property",
+										name:"Pacific Avenue",
+										precio:300,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:26,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"green",
+										casa1:130,
+										casa2:390,
+										casa3:900,
+										casa4:1100,
+										hotel:1275
+									};
+									propiedades.push(propiedad);
+									break;
+								case 23:
+									var propiedad = {
+										type:"property",
+										name:"North Carolina Avenue",
+										precio:300,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:26,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"green",
+										casa1:130,
+										casa2:390,
+										casa3:900,
+										casa4:1100,
+										hotel:1275
+									};
+									propiedades.push(propiedad);
+									break;
+								case 24:
+									var propiedad = {
+										type:"property",
+										name:"Pennsylvania Avenue",
+										precio:320,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:28,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"green",
+										casa1:150,
+										casa2:450,
+										casa3:1000,
+										casa4:1200,
+										hotel:1400
+									};
+									propiedades.push(propiedad);
+									break;
+								case 25:
+									var propiedad = {
+										type:"railroad",
+										name:"Short Line",
+										precio:200,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:25,
+										nRailroad:0,
+										color:"black"
+									};
+									propiedades.push(propiedad);
+									break;
+								case 26:
+									var propiedad = {
+										type:"property",
+										name:"Park Place",
+										precio:350,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:35,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"blue",
+										casa1:175,
+										casa2:500,
+										casa3:1100,
+										casa4:1300,
+										hotel:1500
+									};
+									propiedades.push(propiedad);
+									break;
+								case 27:
+									var propiedad = {
+										type:"property",
+										name:"Broadwalk",
+										precio:400,
+										tienePropietario:false,
+										propietario:"",
+										hipotecado:false,
+										alquiler:50,
+										tieneCasa:false,
+										casas:0,
+										tieneHotel:false,
+										color:"blue",
+										casa1:200,
+										casa2:600,
+										casa3:1400,
+										casa4:1700,
+										hotel:2000
+									};
+									propiedades.push(propiedad);
+									break;
+							}
+						}
+					}
+					
+					function initRailroadsCompany(){
+						for(var i=0;i<nplayers;i++){
+							railroadJugadores[i]=0;
+							companyJugadores[i]=0;
+						}
+					}
+					
+					function initInventario(){
+						for(var i=0;i<nplayers;i++){
+							var numero = i+1;
+							var nombre = "jugador" + numero;
+							divprops[i] = document.createElement("DIV");
+							divprops[i].setAttribute("id",nombre);
+							divprops[i].setAttribute("class","propjugador");
+							divprops[i].style.display = "none";
+							divprops[i].style.width = "100%";
+							divprops[i].style.height = "100%";
+							document.getElementById("wrapperpropiedades").append(divprops[i]);
+							inventarioJugador[i]=0;
+						}
+					}
+					
+					function addPlayer(number){
+						switch(number){
+							case 2:
+								document.getElementById("player1").style.visibility = "visible";
+								document.getElementById("player2").style.visibility = "visible";
+								document.getElementById("player3").style.visibility = "hidden";
+								document.getElementById("player4").style.visibility = "hidden";
+								document.getElementById("player5").style.visibility = "hidden";
+								document.getElementById("player6").style.visibility = "hidden";
+								document.getElementById("player7").style.visibility = "hidden";
+								document.getElementById("player8").style.visibility = "hidden";
+								break;
+							case 3:
+								document.getElementById("player1").style.visibility = "visible";
+								document.getElementById("player2").style.visibility = "visible";
+								document.getElementById("player3").style.visibility = "visible";
+								document.getElementById("player4").style.visibility = "hidden";
+								document.getElementById("player5").style.visibility = "hidden";
+								document.getElementById("player6").style.visibility = "hidden";
+								document.getElementById("player7").style.visibility = "hidden";
+								document.getElementById("player8").style.visibility = "hidden";
+								break;
+							case 4:
+								document.getElementById("player1").style.visibility = "visible";
+								document.getElementById("player2").style.visibility = "visible";
+								document.getElementById("player3").style.visibility = "visible";
+								document.getElementById("player4").style.visibility = "visible";
+								document.getElementById("player5").style.visibility = "hidden";
+								document.getElementById("player6").style.visibility = "hidden";
+								document.getElementById("player7").style.visibility = "hidden";
+								document.getElementById("player8").style.visibility = "hidden";
+								break;
+							case 5:
+								document.getElementById("player1").style.visibility = "visible";
+								document.getElementById("player2").style.visibility = "visible";
+								document.getElementById("player3").style.visibility = "visible";
+								document.getElementById("player4").style.visibility = "visible";
+								document.getElementById("player5").style.visibility = "visible";
+								document.getElementById("player6").style.visibility = "hidden";
+								document.getElementById("player7").style.visibility = "hidden";
+								document.getElementById("player8").style.visibility = "hidden";
+								break;
+							case 6:
+								document.getElementById("player1").style.visibility = "visible";
+								document.getElementById("player2").style.visibility = "visible";
+								document.getElementById("player3").style.visibility = "visible";
+								document.getElementById("player4").style.visibility = "visible";
+								document.getElementById("player5").style.visibility = "visible";
+								document.getElementById("player6").style.visibility = "visible";
+								document.getElementById("player7").style.visibility = "hidden";
+								document.getElementById("player8").style.visibility = "hidden";
+								break;
+							case 7:
+								document.getElementById("player1").style.visibility = "visible";
+								document.getElementById("player2").style.visibility = "visible";
+								document.getElementById("player3").style.visibility = "visible";
+								document.getElementById("player4").style.visibility = "visible";
+								document.getElementById("player5").style.visibility = "visible";
+								document.getElementById("player6").style.visibility = "visible";
+								document.getElementById("player7").style.visibility = "visible";
+								document.getElementById("player8").style.visibility = "hidden";
+								break;
+							case 8:
+								document.getElementById("player1").style.visibility = "visible";
+								document.getElementById("player2").style.visibility = "visible";
+								document.getElementById("player3").style.visibility = "visible";
+								document.getElementById("player4").style.visibility = "visible";
+								document.getElementById("player5").style.visibility = "visible";
+								document.getElementById("player6").style.visibility = "visible";
+								document.getElementById("player7").style.visibility = "visible";
+								document.getElementById("player8").style.visibility = "visible";
+								break;
+						}
+					}
+					
+					function checkPieces(){
+						var radiobtn = document.getElementsByName("jugadores");
+						opcion1 = document.getElementById("peon1");
+						opcion2 = document.getElementById("peon2");
+						opcion3 = document.getElementById("peon3");
+						opcion4 = document.getElementById("peon4");
+						opcion5 = document.getElementById("peon5");
+						opcion6 = document.getElementById("peon6");
+						opcion7 = document.getElementById("peon7");
+						opcion8 = document.getElementById("peon8");
+						op1 = opcion1.options[opcion1.selectedIndex].value;
+						op2 = opcion2.options[opcion2.selectedIndex].value;
+						op3 = opcion3.options[opcion3.selectedIndex].value;
+						op4 = opcion4.options[opcion4.selectedIndex].value;
+						op5 = opcion5.options[opcion5.selectedIndex].value;
+						op6 = opcion6.options[opcion6.selectedIndex].value;
+						op7 = opcion7.options[opcion7.selectedIndex].value;
+						op8 = opcion8.options[opcion8.selectedIndex].value;
+						for(var i=0;i<radiobtn.length;i++){
+							if(radiobtn[i].checked){
+								value = radiobtn[i].id;
+							}
+						}
+						switch(value){
+							case "2p":
+								if(op1==op2){
+									norepetido = false;
+								}else{
+									norepetido = true;
+								}
+								break;
+							case "3p":
+								if(op1==op2){
+									norepetido = false;
+								}else if(op1==op3){
+									norepetido = false;
+								}else if(op3==op2){
+									norepetido = false;
+								}else{
+									norepetido = true;
+								}
+								break;
+							case "4p":
+								if(op1 == op2){
+									norepetido = false;
+								}else if(op1 == op3){
+									norepetido = false;
+								}else if(op1 == op4){
+									norepetido = false;
+								}else if(op2 == op3){
+									norepetido = false;
+								}else if(op2 == op4){
+									norepetido = false;
+								}else if(op3 == op4){
+									norepetido = false;
+								}else{
+									norepetido = true;
+								}
+								break;
+							case "5p":
+								if(op1 == op2){
+									norepetido = false;
+								}else if(op1 == op3){
+									norepetido = false;
+								}else if(op1 == op4){
+									norepetido = false;
+								}else if(op1 == op5){
+									norepetido=false;
+								}else if(op2 == op3){
+									norepetido = false;
+								}else if(op2 == op4){
+									norepetido = false;
+								}else if(op2 == op5){
+									norepetido = false; 
+								}else if(op3 == op4){
+									norepetido = false;
+								}else if(op3 == op5){
+									norepetido = false;
+								}else if(op4 == op5){
+									norepetido = false;
+								}else{
+									norepetido = true;
+								}
+								break;
+							case "6p":
+								if(op1 == op2){
+									norepetido = false;
+								}else if(op1 == op3){
+									norepetido = false;
+								}else if(op1 == op4){
+									norepetido = false;
+								}else if(op1 == op5){
+									norepetido=false;
+								}else if(op1 == op6){
+									norepetido=false;
+								}else if(op2 == op3){
+									norepetido = false;
+								}else if(op2 == op4){
+									norepetido = false;
+								}else if(op2 == op5){
+									norepetido = false; 
+								}else if(op2 == op6){
+									norepetido = false; 
+								}else if(op3 == op4){
+									norepetido = false;
+								}else if(op3 == op5){
+									norepetido = false;
+								}else if(op3 == op6){
+									norepetido = false;
+								}else if(op4 == op5){
+									norepetido = false;
+								}else if(op4 == op6){
+									norepetido = false;
+								}else if(op5 == op6){
+									norepetido = false;
+								}else{
+									norepetido = true;
+								}
+								break;
+							case "7p":
+								if(op1 == op2){
+									norepetido = false;
+								}else if(op1 == op3){
+									norepetido = false;
+								}else if(op1 == op4){
+									norepetido = false;
+								}else if(op1 == op5){
+									norepetido=false;
+								}else if(op1 == op6){
+									norepetido=false;
+								}else if(op1 == op7){
+									norepetido=false;
+								}else if(op2 == op3){
+									norepetido = false;
+								}else if(op2 == op4){
+									norepetido = false;
+								}else if(op2 == op5){
+									norepetido = false; 
+								}else if(op2 == op6){
+									norepetido = false; 
+								}else if(op2 == op7){
+									norepetido = false; 
+								}else if(op3 == op4){
+									norepetido = false;
+								}else if(op3 == op5){
+									norepetido = false;
+								}else if(op3 == op6){
+									norepetido = false;
+								}else if(op3 == op7){
+									norepetido = false;
+								}else if(op4 == op5){
+									norepetido = false;
+								}else if(op4 == op6){
+									norepetido = false;
+								}else if(op4 == op7){
+									norepetido = false;
+								}else if(op5 == op6){
+									norepetido = false;
+								}else if(op5 == op7){
+									norepetido = false;
+								}else if(op6 == op7){
+									norepetido = false;
+								}else{
+									norepetido = true;
+								}
+								break;
+							case "8p":
+								if(op1 == op2){
+									norepetido = false;
+								}else if(op1 == op3){
+									norepetido = false;
+								}else if(op1 == op4){
+									norepetido = false;
+								}else if(op1 == op5){
+									norepetido=false;
+								}else if(op1 == op6){
+									norepetido=false;
+								}else if(op1 == op7){
+									norepetido=false;
+								}else if(op1 == op8){
+									norepetido=false;
+								}else if(op2 == op3){
+									norepetido = false;
+								}else if(op2 == op4){
+									norepetido = false;
+								}else if(op2 == op5){
+									norepetido = false; 
+								}else if(op2 == op6){
+									norepetido = false; 
+								}else if(op2 == op7){
+									norepetido = false; 
+								}else if(op2 == op8){
+									norepetido = false; 
+								}else if(op3 == op4){
+									norepetido = false;
+								}else if(op3 == op5){
+									norepetido = false;
+								}else if(op3 == op6){
+									norepetido = false;
+								}else if(op3 == op7){
+									norepetido = false;
+								}else if(op3 == op8){
+									norepetido = false;
+								}else if(op4 == op5){
+									norepetido = false;
+								}else if(op4 == op6){
+									norepetido = false;
+								}else if(op4 == op7){
+									norepetido = false;
+								}else if(op4 == op8){
+									norepetido = false;
+								}else if(op5 == op6){
+									norepetido = false;
+								}else if(op5 == op7){
+									norepetido = false;
+								}else if(op5 == op8){
+									norepetido = false;
+								}else if(op6 == op7){
+									norepetido = false;
+								}else if(op6 == op8){
+									norepetido = false;
+								}else if(op7 == op8){
+									norepetido = false;
+								}else{
+									norepetido = true;
+								}
+								break;
+						}
+						return norepetido;
+					}
+					
+					function generarTurnos(){
+						var nohay = true;
+						var rand;
+						switch(value){
+							case "2p":
+								nplayers=2;
+								piezas[0]=op1;
+								piezas[1]=op2;
+								break;
+							case "3p":
+								nplayers=3;
+								piezas[0]=op1;
+								piezas[1]=op2;
+								piezas[2]=op3;
+								break;
+							case "4p":
+								nplayers=4;
+								piezas[0]=op1;
+								piezas[1]=op2;
+								piezas[2]=op3;
+								piezas[3]=op4;
+								break;
+							case "5p":
+								nplayers=5;
+								piezas[0]=op1;
+								piezas[1]=op2;
+								piezas[2]=op3;
+								piezas[3]=op4;
+								piezas[4]=op5;
+								break;
+							case "6p":
+								nplayers=6;
+								piezas[0]=op1;
+								piezas[1]=op2;
+								piezas[2]=op3;
+								piezas[3]=op4;
+								piezas[4]=op5;
+								piezas[5]=op6;
+								break;
+							case "7p":
+								nplayers=7;
+								piezas[0]=op1;
+								piezas[1]=op2;
+								piezas[2]=op3;
+								piezas[3]=op4;
+								piezas[4]=op5;
+								piezas[5]=op6;
+								piezas[6]=op7;
+								break;
+							case "8p":
+								nplayers=8;
+								piezas[0]=op1;
+								piezas[1]=op2;
+								piezas[2]=op3;
+								piezas[3]=op4;
+								piezas[4]=op5;
+								piezas[5]=op6;
+								piezas[6]=op7;
+								piezas[7]=op8;
+								break;
+						}
+						rand = parseInt(Math.random()*nplayers)+1;
+						turnos.push(rand);
+				
+						do{
+							var x = parseInt(Math.random()*nplayers)+1;
+							for(var i=0;i<turnos.length;i++){
+								if(turnos[i] == x){
+									nohay = false;
+								}
+							}
+							if(nohay){
+								turnos.push(x);
+							}
+							if(!nohay){
+								nohay = true;
+							}
+						}while(turnos.length<nplayers);
+						initPasos();
+						initMoney();
+						initInventario();
+						escribirTurno();
+					}
+					
+					function terminarTurno(){
+						divprops[turnos[turnostotales]-1].style.display = "none";
+						if(turnostotales==nplayers-1){
+							turnostotales=0;
+						}else{
+							turnostotales++;
+						}
+						escribirTurno();
+						disableTerminar();
+						enableDice();
+						disableComprar();
+					}
+					
+					function initMoney(){
+						for(var i=0;i<nplayers;i++){
+							playersmoney[i] = 1500;
+						}
+					}
+					
+					function escribirTurno(){
+						var newDiv = document.createElement("DIV");
+						var dialog = document.getElementById("comprar");
+						newDiv.innerHTML = "Es el turno del jugador "+turnos[turnostotales];
+						dialog.append(newDiv);
+						document.getElementById("playerturn").innerHTML = "Jugador "+turnos[turnostotales];
+						document.getElementById("playermoney").innerHTML = playersmoney[turnos[turnostotales]-1];
+						newDiv.scrollIntoView(false);
+						showPropiedadesJugador(turnos[turnostotales]-1);
+					}
+					
+					function play(){
+						checkPieces();
+						if(!norepetido){
+							alert("Hay piezas repetidas!");
+						}else{
+							var elementos = document.getElementsByClassName("player");
+							document.getElementById("inicio").style.visibility = "hidden";
+							for(var i=0;i<elementos.length;i++){
+								elementos[i].style.visibility = "hidden";
+							}
+							generarTurnos();
+							initPropiedades();
+							initPiezasJugadores();
+							initRailroadsCompany();
+						}
+					}
+					
+					function closeCard(){
+						document.getElementsByClassName("cartas")[0].style.display = "none";
+						document.getElementsByClassName("cartas")[1].style.display = "none";
+					}
+				</script>
+			</div>
+		</div>
+		
+		<div id="community-chest" class="cartas">
+			<div class="close-area">
+				<img src="images/cancel.png" onclick="closeCard()">
+			</div>
+			<div class="card-area">
+				<div class="card">
+					Error del banco a favor de usted. Cobrar 200.
+				</div>
+			</div>
+		</div>
+		
+		<div id="chance" class="cartas">
+			<div class="close-area">
+				<img src="images/cancel.png" onclick="closeCard()">
+			</div>
+			<div class="card-area">
+				<div class="card">
+					¡Atrás! Retroceda su señal 3 espacios.
+				</div>
+			</div>
+		</div>
+		
+		<div class="piezas" id="buq">
+			<img src="images/peones/buque.png">
+		</div>
+		<div class="piezas" id="carre">
+			<img src="images/peones/carretilla.png">
+		</div>
+		<div class="piezas" id="carro">
+			<img src="images/peones/carrito.png">
+		</div>
+		<div class="piezas" id="ded">
+			<img src="images/peones/dedal.png">
+		</div>
+		<div class="piezas" id="perro">
+			<img src="images/peones/perro.png">
+		</div>
+		<div class="piezas" id="pla">
+			<img src="images/peones/plancha.png">
+		</div>
+		<div class="piezas" id="som">
+			<img src="images/peones/sombrero.png">
+		</div>
+		<div class="piezas" id="zap">
+			<img src="images/peones/zapato.png">
+		</div>
+			
+		<div class="center-content">
+			<div id="divs">
+
+				<div class="divisiones" id="01">
+					<div id="menu">
+						<button class="tabs" id="tabCompras" onclick="showCompras()">Compras</button>
+						<button class="tabs" id="tabPropiedades" onclick="showPropiedades()">Propiedades</button>
+						<div id="tab1" class="tabdivs">
+							<div id="comprar">
+							</div>
+							<div class="stats">
+								<p id="playerturn">Aquí va el jugador en turno</p>
+								<p>$<span id="playermoney">money</span></p>
+							</div>
+							<div id="dado">
+								<div class="centrar">
+									<div id="numeritos">
+										<div class="nums"><img src="images/1.png" id="img1"></div>
+										<div class="nums"><img src="images/1.png" id="img2"></div>
+										<div class="nums"><img src="images/1.png" id="img3"></div>
+										<div class="nums"><img src="images/1.png" id="img4"></div>
+										<div class="nums"><img src="images/1.png" id="img5"></div>
+										<div class="nums"><img src="images/1.png" id="img6"></div>
+										<div class="nums"><img src="images/1.png" id="img7"></div>
+										<div class="nums"><img src="images/1.png" id="img8"></div>
+										<div class="nums"><img src="images/1.png" id="img9"></div>
+									</div>
+								</div>
+							</div>
+							<button id="rolldice" class="btn" onclick="tirarDado()">T I R A R</button>
+							<br>
+							<button id="buy" class="btn">COMPRAR PROPIEDAD</button>
+							<br>
+							<button id="terminar" class="btn" onclick="terminarTurno()">TERMINAR TURNO</button>
+						</div>
+						<div id="tab2" class="tabdivs">
+							<div id="propiedades">
+								<p id="hpropiedades">TUS PROPIEDADES</p>
+								<div id="wrapperpropiedades">
+									
+								</div>
+							</div>
+						</div>
+
+					</div>
+					
+				</div>
+
+				<div class="divisiones" id="wrapper">
+					<div id="wrap">
+						<div class="casilla">
+							<p id="casilla20">FREE PARKING</p>
+							<div>
+								<img src="images/park.png" style="width: 100%; margin-top: 0.5em;">
+							</div>
+						</div>
+						
+						<div class="casilla" id="linea-horizontal-arriba">
+							<div class="property-up">
+								<div class="content-up">
+									<p id="casilla21" class="propertyname">KENTUCKY AVENUE</p>
+									<p><span class="moneysign">M</span>220</p>
+								</div>
+								<div class="reds"></div>
+							</div>
+							
+							<div class="casilla">
+								<div class="utilidades-up">
+									<p id="casilla22">CHANCE</p>
+									<span id="chance1" class="question">?</span>
+								</div>
+							</div>
+							
+							<div class="property-up">
+								<div class="content-up">
+									<p  id="casilla23" class="propertyname">INDIANA AVENUE</p>
+									<p><span class="moneysign">M</span>220</p>
+								</div>
+								<div class="reds"></div>
+							</div>
+							
+							<div class="property-up">
+								<div class="content-up">
+									<p id="casilla24" class="propertyname">ILLINOIS AVENUE</p>
+									<p><span class="moneysign">M</span>240</p>
+								</div>
+								<div class="reds"></div>
+							</div>
+							
+							<div class="rail-up">
+								<div class="content-rail-up">
+									<p id="casilla25" class="propertyname">B. &amp; O. RAILROAD</p>
+									<img src="images/Train.gif">
+									<p><span class="moneysign">M</span>200</p>
+								</div>
+							</div>
+							
+							<div class="property-up">
+								<div class="content-up">
+									<p id="casilla26" class="propertyname">ATLANTIC AVENUE</p>
+									<p><span class="moneysign">M</span>260</p>
+								</div>
+								<div class="yellows"></div>
+							</div>
+							
+							<div class="property-up">
+								<div class="content-up">
+									<p id="casilla27" class="propertyname">VENTNOR AVENUE</p>
+									<p><span class="moneysign">M</span>260</p>
+								</div>
+								<div class="yellows"></div>
+							</div>
+							
+							<div class="rail-up">
+								<div class="content-rail-up">
+									<p id="casilla28" class="propertyname">WATER WORKS</p>
+									<img src="images/waterworks.png">
+									<p><span class="moneysign">M</span>280</p>
+								</div>
+							</div>
+							
+							<div class="property-up">
+								<div class="content-up">
+									<p id="casilla29" class="propertyname">MARVIN GARDENS</p>
+									<p><span class="moneysign">M</span>280</p>
+								</div>
+								<div class="yellows"></div>
+							</div>
+							
+						</div>
+						
+						<div class="casilla">
+							<p id="casilla30" class="hide">VÁYASE A LA CÁRCEL</p>
+							<div style="transform: rotate(45deg); margin-top: 0.5em;">
+								GO TO
+								<img src="images/gotojail.png" width="60%;">
+								<p style="margin-top: 0">JAIL</p>
+							</div>
+						</div>
+						
+						<div class="casilla" id="linea-vertical-izq">
+							<div class="property-left">
+								<div class="content-left">
+									<p><span class="moneysign">M</span>200</p>
+									<p id="casilla19" class="propertyname">NEW YORK AVENUE</p>
+								</div>
+								<div class="oranges"></div>
+							</div>
+							
+							<div class="property-left">
+								<div class="content-left">
+									<p><span class="moneysign">M</span>180</p>
+									<p id="casilla18" class="propertyname">TENNESSE AVENUE</p>
+								</div>
+								<div class="oranges"></div>
+							</div>
+							
+							<div class="rail-left">
+								<div class="content-rail-left">
+									<div class="propertyname"><p id="casilla17">COMMUNITY CHEST</p></div>
+									<div><img src="images/chest.png"></div>
+									<div><p></p></div>
+								</div>
+							</div>
+							
+							<div class="property-left">
+								<div class="content-left">
+									<p><span class="moneysign">M</span>180</p>
+									<p id="casilla16">S.T. JAMES PLACE</p>
+								</div>
+								<div class="oranges"></div>
+							</div>
+							
+							<div class="rail-left">
+								<div class="content-rail-left">
+									<div><p id="casilla15" class="propertyname">PENNSYLVANIA ROAD</p></div>
+									<div><img src="images/Train.gif"></div>
+									<div><p><span class="moneysign">M</span>200</p></div>
+								</div>
+							</div>
+							
+							<div class="property-left">
+								<div class="content-left">
+									<p><span class="moneysign">M</span>160</p>
+									<p id="casilla14" class="propertyname">VIRGINIA AVENUE</p>
+								</div>
+								<div class="pinks"></div>
+							</div>
+							
+							<div class="property-left">
+								<div class="content-left">
+									<p><span class="moneysign">M</span>140</p>
+									<p id="casilla13" class="propertyname">STATES AVENUE</p>
+								</div>
+								<div class="pinks"></div>
+							</div>
+							
+							<div class="rail-left">
+								<div class="content-rail-left">
+									<div><p id="casilla12" class="propertyname">ELECTRIC COMPANY</p></div>
+									<div><img src="images/electric.png" style="margin-top: -1.2em;"></div>
+									<div><p><span class="moneysign">M</span>150</p></div>
+								</div>
+							</div>
+							
+							<div class="property-left">
+								<div class="content-left">
+									<p><span class="moneysign">M</span>140</p>
+									<p id="casilla11" class="propertyname">S.T. CHARLES AVENUE</p>
+								</div>
+								<div class="pinks"></div>
+							</div>
+						</div>
+						
+						<div class="casilla" id="centro">
+							<div class="deck" id="treasure"><p>COMMUNITY CHEST</p></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<img src="images/mono.png" id="monopoly">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div class="deck" id="chancedeck"><p>CHANCE</p></div>
+						</div>
+						
+						<div class="casilla" id="linea-vertical-der">
+							<div class="property-right">
+								<div class="greens"></div>
+								<div class="content-right">
+									<p id="casilla31" class="propertyname">PACIFIC AVENUE</p>
+									<p><span class="moneysign">M</span>300</p>
+								</div>
+							</div>
+							
+							<div class="property-right">
+								<div class="greens"></div>
+								<div class="content-right">
+									<p id="casilla32" class="propertyname">NORTH CAROLINA AVENUE</p>
+									<p><span class="moneysign">M</span>300</p>
+								</div>
+							</div>
+							
+							<div class="rail-right">
+								<div class="content-rail-right">
+									<div><p id="casilla33" class="propertyname">COMMUNITY CHEST</p></div>
+									<div><img src="images/chest.png"></div>
+									<div><p></p></div>
+								</div>
+							</div>
+							
+							<div class="property-right">
+								<div class="greens"></div>
+								<div class="content-right">
+									<p id="casilla34" class="propertyname">PENNSYLVANIA AVENUE</p>
+									<p><span class="moneysign">M</span>320</p>
+								</div>
+							</div>
+							
+							<div class="casilla">
+								<div class="utilidades-right">
+									<p id="casilla35" class="propertyname">CHANCE</p>
+									<span id="chance2" class="question">?</span>
+								</div>
+							</div>
+							
+							<div class="rail-right">
+								<div class="content-rail-right">
+									<div><p id="casilla36" class="propertyname">SHORT LINE</p></div>
+									<div><img src="images/Train.gif"></div>
+									<div><p><span class="moneysign">M</span>200</p></div>
+								</div>
+							</div>
+							
+							
+							<div class="property-right">
+								<div class="blues"></div>
+								<div class="content-right">
+									<p id="casilla37" class="propertyname">PARK PLACE</p>
+									<p><span class="moneysign">M</span>350</p>
+								</div>
+							</div>
+							
+							<div class="rail-right">
+								<div class="content-rail-right">
+									<div><p id="casilla38" class="propertyname">LUXURY TAX</p></div>
+									<div><img src="images/ring.png" style="margin-bottom: -2em;"></div>
+									<div><p>PAY <span class="moneysign">M</span>100</p></div>
+								</div>
+							</div>
+							
+							<div class="property-right">
+								<div class="blues"></div>
+								<div class="content-right">
+									<p id="casilla39" class="propertyname">BOARDWALK</p>
+									<p><span class="moneysign">M</span>400</p>
+								</div>
+							</div>
+						
+						</div>
+						
+						<div class="casilla">
+							<p id="casilla10">CÁRCEL</p>
+							<img src="images/injail.jpg" style="width: 100%; transform: rotate(90deg);">
+						</div>
+						
+						<div class="casilla" id="linea-horizontal-abajo">
+							<div class="property-down">
+								<div class="skyblues"></div>
+								<div class="content-down">
+									<p id="casilla9" class="propertyname">CONNECTICUT AVENUE</p>
+									<p><span class="moneysign">M</span>120</p>
+								</div>
+							</div>
+							
+							<div class="property-down">
+								<div class="skyblues"></div>
+								<div class="content-down">
+									<p id="casilla8" class="propertyname">VERMONT AVENUE</p>
+									<p><span class="moneysign">M</span>100</p>
+								</div>
+							</div>
+							
+							<div class="casilla">
+								<div class="utilidades-up">
+									<p id="casilla7" class="propertyname">CHANCE</p>
+									<span id="chance3" class="question">?</span>
+								</div>
+							</div>
+							
+							<div class="property-down">
+								<div class="skyblues"></div>
+								<div class="content-down">
+									<p id="casilla6" class="propertyname">ORIENTAL AVENUE</p>
+									<p><span class="moneysign">M</span>100</p>
+								</div>
+							</div>
+							
+							<div class="rail-up">
+								<div class="content-rail-up">
+									<p id="casilla5" class="propertyname">READING RAILROAD</p>
+									<img src="images/Train.gif">
+									<p><span class="moneysign">M</span>200</p>
+								</div>
+							</div>
+							
+							<div class="rail-up">
+								<div class="content-rail-up">
+									<p id="casilla4" class="heading">INCOME TAX</p>
+									<p class="heading">&diams;</p>
+									<p>PAY <span class="moneysign">M</span>200</p>
+								</div>
+							</div>
+							
+							<div class="property-down">
+								<div class="browns"></div>
+								<div class="content-down">
+									<p id="casilla3" class="propertyname">BALTIC<br> AVENUE</p>
+									<p><span class="moneysign">M</span>60</p>
+								</div>
+							</div>
+							
+							<div class="rail-up">
+								<div class="content-rail-up">
+									<p id="casilla2" class="propertyname">COMMUNITY CHEST</p>
+									<img src="images/chest.png">
+								</div>
+							</div>
+							
+							<div class="property-down">
+								<div class="browns"></div>
+								<div class="content-down">
+									<p id="casilla1" class="propertyname">MEDITER-<br>RANEAN AVENUE</p>
+									<p><span class="moneysign">M</span>60</p>
+								</div>
+							</div>
+						</div>
+						
+						<div class="casilla">
+							<p id="casilla40">GO</p>
+							<p id="starttext">COLLECT <br><span class="moneysign">M</span>200 SALARY<br>AS YOU PASS</p>
+							<p id="start">GO</p>
+							<p id="arrow">&larr;</p>
+						</div>
+						
+					</div>
+				</div>
+
+			</div>
+		
+		</div>
+		
+	</body>
+</html>
