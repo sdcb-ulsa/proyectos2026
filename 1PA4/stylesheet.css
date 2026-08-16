@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+
+@property --color1 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #C97C5D;
+}
+
+@property --color2 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #efe3d0;
+}
+
+@property --text1 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #6b4226;
+}
+
+@property --acc1 {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #8a9b6e;
+}
+
+@property --bkg {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #faf6f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color1);
+    color: var(--text1);
+    font-family: "Lexend Deca", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Radio Canada Big", sans-serif;
+    padding: 5px;
+}
+
+button {
+    font-family: inherit;
+    background-color: var(--acc1);
+    border: none;
+    padding: 10px;
+}
+
+li {
+    list-style-type: none;
+    display: inline;
+    padding: 10px;
+}
+
+header {
+    background-color: var(--bkg);
+    text-align: center;
+    padding: 15px 0 15px;
+}
+
+img {
+    width: 50%;
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text1);
+}
+
+section {
+    padding: 50px;
+    display: flex;
+}
+
+section div {
+    width: 50%;
+}
+
+footer {
+    background-color: var(--text1);
+    color: var(--color2);
+}
+
+footer img {
+    width: min-content;
+    display: inline;
+}
