@@ -1,0 +1,154 @@
+@property --mezquite {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #2A1512;
+}
+
+@property --polvo {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #B98A3D;
+}
+
+@property --cielo {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #1F4056;
+}
+
+@property --pitaya {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #C81457;
+}
+
+@property --fuego {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #D8501B;
+}
+
+@property --arena {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: #F4EDE4;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    background-color: var(--arena);
+    padding: 30px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--mezquite);
+    margin-left: 30px;
+}
+
+header {
+    background-image: url("img/header.jpg");
+    background-size: cover;
+    background-position: center;
+    color: var(--arena);
+}
+
+header>div {
+    padding: 300px 300px 300px 100px;
+}
+
+header h1,
+h2,
+h3,
+p,
+button {
+    margin: 20px 0 20px;
+}
+
+h1 {
+    color: var(--fuego)
+}
+
+button {
+    border: none;
+    padding: 10px;
+    background-color: var(--fuego);
+    color: var(--arena)
+}
+
+section,
+footer {
+    padding: 20px;
+}
+
+#section1 {
+    background-color: var(--polvo);
+    text-align: center;
+}
+
+#section1 table {
+    margin: auto;
+    width: 70%;
+    color: var(--arena);
+}
+
+#section1 h2 {
+    color: var(--cielo);
+}
+
+#img-cafe {
+    height: 550px;
+    display: inline-block;
+}
+
+
+.columnas {
+    width: 49%;
+    display: inline-block;
+}
+
+#section2 {
+    text-align: center;
+    background-color: var(--arena);
+    padding: 50px 0 70px;
+}
+
+#section2 table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+#section2 h2 {
+    color: var(--pitaya);
+}
+
+#section2 th {
+    background-color: var(--pitaya);
+    color: var(--arena);
+    padding: 10px;
+}
+
+#section2 td {
+    padding: 10px;
+    border-bottom: 1px solid var(--pitaya);
+}
+
+footer {
+    background-color: var(--cielo);
+    color: var(--arena);
+}
+
+footer table {
+    margin: auto;
+}
+
+footer table td {
+    width: 50%;
+}
