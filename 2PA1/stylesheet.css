@@ -1,0 +1,77 @@
+/* COMBINADOR DESCENDIENTE
+div p {
+    background-color: aqua;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+} */
+
+/* COMBINADOR HIJO
+div>p {
+    background-color: greenyellow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+} */
+
+/* COMBINADOR SIGUIENTE HERMANO*/
+
+div+p {
+    background-color: blueviolet;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+/* COMBINADOR HERMANO SUBSECUENTE
+div~p {
+    background-color: palevioletred;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+} */
+
+.link:link {
+    color: black;
+}
+
+.link:hover {
+    background-color: chartreuse;
+}
+
+.link:focus {
+    font-weight: bold;
+}
+
+.link:active {
+    color: blue;
+}
+
+.link:visited {
+    color: palevioletred;
+    background-color: aqua;
+}
+
+#lorem::first-line {
+    color: cornsilk;
+    background-color: cornflowerblue;
+}
+
+#lorem::first-letter {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+div::before {
+    content: "⭐​";
+}
+
+p::after {
+    content: "🗿";
+}
+
+::marker {
+    color: crimson;
+    font-size: 40px;
+}
+
+::selection {
+    color: aquamarine;
+    background-color: darkblue;
+}
