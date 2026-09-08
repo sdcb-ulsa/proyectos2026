@@ -1,0 +1,43 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+#nav {
+    text-align: center;
+    height: 40px;
+    background-color: cornsilk;
+    position: fixed;
+}
+
+.contenedor {
+    width: 600px;
+    height: 400px;
+    background-color: lightgray;
+    border: 3px solid black;
+}
+
+.caja {
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+}
+
+.caja1 {
+    background-color: lightcoral;
+}
+
+.caja2 {
+    background-color: lightblue;
+    top: 2px;
+    left: 350px;
+}
+
+.caja3 {
+    background-color: lightgreen;
+}
+
+.scroll {
+    height: 1000px;
+    background-color: whitesmoke;
+}
