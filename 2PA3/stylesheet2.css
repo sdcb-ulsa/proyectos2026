@@ -1,0 +1,40 @@
+* {
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+footer {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    height: 250px;
+}
+
+#logo {
+    width: 100px;
+}
+
+[id|="col"] {
+    display: flex;
+    flex-direction: column;
+}
+
+#col-1,
+#col-3 {
+    flex: 1 1 200px;
+}
+
+#col-2 {
+    flex-grow: 3;
+    padding-top: 50px;
+}
+
+.item-direccion {
+    display: flex;
+    flex-flow: nowrap row;
+    align-items: center;
+}
+
+.item-direccion img {
+    margin-right: 5px;
+}
