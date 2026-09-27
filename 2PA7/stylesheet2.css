@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Verdana, 'Segoe UI', Tahoma, Geneva, sans-serif;
+    background-color: rgb(0, 0, 0);
+    padding: 15px;
+    color: hotpink;
+}
+
+.row {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.col-1 {
+    grid-column: span 1;
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+.col-3 {
+    grid-column: span 3;
+}
+
+.col-4 {
+    grid-column: span 4;
+}
+
+.col-5 {
+    grid-column: span 5;
+}
+
+.col-6 {
+    grid-column: span 6;
+}
+
+.col-7 {
+    grid-column: span 7;
+}
+
+.col-8 {
+    grid-column: span 8;
+}
+
+.col-9 {
+    grid-column: span 9;
+}
+
+.col-10 {
+    grid-column: span 10;
+}
+
+.col-11 {
+    grid-column: span 11;
+}
+
+.col-12 {
+    grid-column: span 12;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.logo>img {
+    width: 30%;
+}
+
+.titulo {
+    font-size: 38px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.enlace-titulo {
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+    height: 100px;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.enlace-titulo>a {
+    color: hotpink;
+}
+
+.enlace-titulo>a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.enlace-titulo>a:active {
+    color: rgb(255, 255, 255);
+}
+
+.enlace-titulo>a:visited {
+    color: hotpink;
+}
+
+.archivo-lateral {
+    border: 1px solid black;
+    width: 70%;
+    padding: 10px;
+    background-color: hotpink;
+    color: white;
+}
+
+.archivo-central {
+    border: 1px solid black;
+    height: 200px;
+    background-color: hotpink;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.año {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0;
+}
+
+.meses {
+    line-height: 10%;
+    margin-left: 10px;
+}
+
+.foto>img {
+    width: 100%;
+}
+
+.fila-fotos {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.fila-fotos-item {
+    margin-right: 5px;
+}
+
+.foto-contenido {
+    width: 150px;
+    height: 100px;
+    background-color: white;
+}
+
+.archivo-nav {
+    display: flex;
+    justify-content: end;
+}
+
+.favoritos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.fav-foto {
+    display: inline-flex;
+    width: 150px;
+    height: 113px;
+    background-color: white;
+}
+
+.fav-user>p {
+    margin: 0;
+}
+
+.fav-user {
+    margin: 10px;
+}
+
+.texto-foto {
+    white-space: pre-line;
+}

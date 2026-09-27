@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+}
+
+[class^="col-"] {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+    font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.col-1 {
+    grid-column: span 1;
+    background-color: rgb(255, 126, 83);
+}
+
+.col-2 {
+    grid-column: span 2;
+    background-color: #ffa85c;
+}
+
+.col-3 {
+    grid-column: span 3;
+    background-color: #fff75c;
+}
+
+.col-4 {
+    grid-column: span 4;
+    background-color: #a8ff5c;
+}
+
+.col-5 {
+    grid-column: span 5;
+    background-color: #5cffce;
+}
+
+.col-6 {
+    grid-column: span 6;
+    background-color: #5cd6ff;
+}
+
+.col-7 {
+    grid-column: span 7;
+    grid-row: span 4;
+    background-color: #5c74ff;
+}
+
+.col-8 {
+    grid-column: span 8;
+    grid-row: span 4;
+    background-color: #7d5cff;
+}
+
+.col-9 {
+    grid-column: span 9;
+    grid-row: span 3;
+    background-color: #d45cff;
+}
+
+.col-10 {
+    grid-column: span 10;
+    grid-row: span 2;
+    background-color: #ff5cde;
+}
+
+.col-11 {
+    grid-column: span 11;
+    background-color: #ff5ca0;
+}
+
+.col-12 {
+    grid-column: span 12;
+    background-color: #ff5c5c;
+}
