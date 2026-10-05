@@ -9,6 +9,7 @@
 }
 
 [class^="col-"] {
+    grid-column: span 12;
     border: 1px solid black;
     text-align: center;
     padding: 5px;
@@ -16,65 +17,118 @@
 }
 
 .col-1 {
-    grid-column: span 1;
     background-color: rgb(255, 126, 83);
 }
 
 .col-2 {
-    grid-column: span 2;
     background-color: #ffa85c;
 }
 
 .col-3 {
-    grid-column: span 3;
     background-color: #fff75c;
 }
 
 .col-4 {
-    grid-column: span 4;
     background-color: #a8ff5c;
 }
 
 .col-5 {
-    grid-column: span 5;
     background-color: #5cffce;
 }
 
 .col-6 {
-    grid-column: span 6;
     background-color: #5cd6ff;
 }
 
 .col-7 {
-    grid-column: span 7;
-    grid-row: span 4;
     background-color: #5c74ff;
 }
 
 .col-8 {
-    grid-column: span 8;
-    grid-row: span 4;
     background-color: #7d5cff;
 }
 
 .col-9 {
-    grid-column: span 9;
-    grid-row: span 3;
     background-color: #d45cff;
 }
 
 .col-10 {
-    grid-column: span 10;
-    grid-row: span 2;
     background-color: #ff5cde;
 }
 
 .col-11 {
-    grid-column: span 11;
     background-color: #ff5ca0;
 }
 
 .col-12 {
-    grid-column: span 12;
     background-color: #ff5c5c;
+}
+
+@media screen and (min-width: 768px) {
+    .col-4 {
+        grid-column: span 4;
+    }
+
+    .col-5 {
+        grid-column: span 5;
+    }
+
+    .col-6 {
+        grid-column: span 6;
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+    .col-1 {
+        grid-column: span 1;
+    }
+
+    .col-2 {
+        grid-column: span 2;
+    }
+
+    .col-3 {
+        grid-column: span 3;
+    }
+
+    .col-4 {
+        grid-column: span 4;
+    }
+
+    .col-5 {
+        grid-column: span 5;
+    }
+
+    .col-6 {
+        grid-column: span 6;
+    }
+
+    .col-7 {
+        grid-column: span 7;
+        /*grid-row: span 4;*/
+    }
+
+    .col-8 {
+        grid-column: span 8;
+        /*grid-row: span 4;*/
+    }
+
+    .col-9 {
+        grid-column: span 9;
+        /*grid-row: span 3;*/
+    }
+
+    .col-10 {
+        grid-column: span 10;
+        /*grid-row: span 2;*/
+    }
+
+    .col-11 {
+        grid-column: span 11;
+    }
+
+    .col-12 {
+        grid-column: span 12;
+    }
 }
