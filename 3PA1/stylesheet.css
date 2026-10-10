@@ -1,0 +1,163 @@
+* {
+    font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    color:white
+}
+.row {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap:10px;
+}
+
+[class^="col-"] {
+    grid-column: span 12;
+}
+
+.navbar {
+    position: relative;
+    z-index: 100;
+    justify-content: space-around;
+    background-color: black;
+}
+
+.navbar-list {
+    position: relative;
+    right: 5%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 10vh;
+    color: white;
+}
+
+#logo-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo-nav img{
+    display: block;
+    width: 50px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color:white;
+    margin: 10px;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-image: url(img/bkg-header.png);
+    background-position: bottom;
+    background-size: cover;
+    height: 100vh;
+    color:white
+}
+
+.b-grad {
+    position: absolute;
+    z-index: 0;
+    top:10vh;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,1),rgba(255, 255, 255, 0));
+    width: 100%;
+    height: 80vh;
+}
+
+.h-content {
+    z-index: 1;
+}
+
+.button {
+    display: inline-block;
+    margin: 10px;
+    background-color: rgba(100, 148, 237, 0.5);
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: darkcyan;
+}
+
+.card {
+    text-align: center;
+    border: 1px solid white;
+}
+
+footer {
+    text-align: center;
+    background-color: blueviolet;
+    padding: 10px;
+}
+
+#footer-menu {
+    text-align: right;
+}
+
+#footer-menu > a{
+    display: inline-block;
+}
+
+@media screen and (min-width:512px) {
+    .col-1 {
+        grid-column: span 1;
+    }
+
+    .col-2 {
+        grid-column: span 2;
+    }
+
+    .col-3 {
+        grid-column: span 3;
+    }
+
+    .col-4 {
+        grid-column: span 4;
+    }
+
+    .col-5 {
+        grid-column: span 5;
+    }
+
+    .col-6 {
+        grid-column: span 6;
+    }
+
+    .col-7 {
+        grid-column: span 7;
+    }
+
+    .col-8 {
+        grid-column: span 8;
+    }
+
+    .col-9 {
+        grid-column: span 9;
+    }
+
+    .col-10 {
+        grid-column: span 10;
+    }
+
+    .col-11 {
+        grid-column: span 11;
+    }
+
+    .col-12 {
+        grid-column: span 12;
+    }
+}
